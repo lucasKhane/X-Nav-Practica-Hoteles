@@ -9,8 +9,11 @@
   Nombre de su cuenta en el laboratorio del alumno: drodca
   Nombre de usuario en GitHub: lucaskhane
   Resumen de las peculiaridades que se quieran mencionar sobre lo implementado en la parte obligatoria:
-    1.-
+    1.-Descubierto bug en firefox. La propiedad background-attachment: fixed esta rota en firefox. Google
+      me respalda. Sin embargo otras como scroll funcionan. Es cosa del renderizado que hace el navegador
+      de la imagen. No me muestra la imagen con esa propiedad :-( )
+    2.-El Css está bien cuidado
   Lista de funcionalidades opcionales que se hayan implementado, y breve descripcion de cada una.
     1.-
-  URL del vıdeo demostracion de la funcionalidad basica: 
+  URL del vıdeo demostracion de la funcionalidad basica:
   URL del vıdeo demostraci ́on de la funcionalidad optativa, si se ha realizado funcionalidad optativa:

@@ -1,0 +1,79 @@
+body {
+  background:  	#ADD8E6;
+}
+
+#logo, #Inicio, #Gestion_de_colecciones, #Gestion_de_alojados, #lateralizq, #boton,
+#listahoteles, #central, #hotel, #mapa,#lateraldcho, #coleccion, #listacolecciones,
+#pie_de_pagina {
+  border: 2px solid #777;
+  background:  	#ADD8E6;
+}
+
+#contenedor {
+  width: 95%;
+  margin: 0 auto;
+}
+
+#logo {
+  margin: 0.4em;
+  margin-top: 1.4em;
+  height: 100px;
+  background-image: url("./extra/logo.png");
+  background-repeat: no-repeat;
+  background-color: white;
+  background-position: center;
+}
+
+#lateralizq{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 10px;
+  width: 20%;
+  min-height: 10em;
+  background: white;
+  float: left;
+  text-align: center;
+}
+
+#lateralizq h3{
+  text-decoration: underline;
+}
+
+#lateralizq boton {
+  margin: 5px;
+}
+
+#lateralizq #listahoteles {
+  display: none;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: 40em;
+  background: white;
+}
+
+#central{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-right: 0.8em;
+  width: 50%;
+  min-height: 10em;
+  float: left;
+  text-align: center;
+  background: white;
+}
+
+#lateraldcho{
+  margin-top: 1em;
+  margin-bottom: 1em;
+  width: 27%;
+  min-height: 10em;
+  float: right;
+  text-align: center;
+  background: white;
+}
+
+#pie_de_pagina {
+  text-align: center;
+  background-color: white;
+  clear: left;
+}
