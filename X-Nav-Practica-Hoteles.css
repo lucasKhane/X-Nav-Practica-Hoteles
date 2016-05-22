@@ -3,7 +3,7 @@ body {
 }
 
 #logo, #Inicio, #Gestion_de_colecciones, #Gestion_de_alojados, #lateralizq, #boton,
-#listahoteles, #central, #hotel, #mapa,#lateraldcho, #coleccion, #listacolecciones,
+#listahoteles, #central, #hotel, #mapa,#lateraldcho, #coleccion, #nuevacoleccion,
 #pie_de_pagina {
   border: 2px solid #777;
   background:  	#ADD8E6;
@@ -35,7 +35,7 @@ body {
   text-align: center;
 }
 
-#lateralizq h3{
+#lateralizq h3, #central .donde{
   text-decoration: underline;
 }
 
@@ -51,7 +51,7 @@ body {
   background: white;
 }
 
-#central{
+#central, #nuevacoleccion{
   margin-top: 1em;
   margin-bottom: 1em;
   margin-right: 0.8em;
@@ -67,6 +67,21 @@ body {
   height: 30em;
 }
 
+
+#central .hotel{
+  margin-top: 2em;
+  text-decoration: underline;
+}
+
+#central .descripcion{
+  margin-top: 1em;
+  margin-bottom: 2.5em;
+}
+
+#hotelcontainer{
+  display: none;
+}
+
 #lateraldcho{
   margin-top: 1em;
   margin-bottom: 1em;
@@ -76,6 +91,13 @@ body {
   text-align: center;
   background: white;
 }
+
+#lateraldcho p{
+  float: right;
+  text-align: center;
+  width: 80%;
+}
+
 
 #pie_de_pagina {
   text-align: center;
