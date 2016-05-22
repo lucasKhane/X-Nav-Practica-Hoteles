@@ -30,7 +30,7 @@
           <ul>
             <li><a id="Inicio" href="#central">Inicio</a></li>
             <li><a id="Gestion_de_colecciones" href="#nuevacoleccion">Gestión de colecciones</a></li>
-            <li><a id="Gestion_de_alojados" href="#tabs-3">Gestión de alojados</a></li>
+            <li><a id="Gestion_de_alojados" href="#alojados">Gestión de alojados</a></li>
           </ul>
 
             <div id="lateralizq">
@@ -42,50 +42,60 @@
               <h3 class="donde">¿Dónde está?</h3>
               <div id="mapa"></div>
               <div id="hotelcontainer">
-                  <h3 class="hotel">Hotel</h3>
-                      <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                        <!-- Indicators -->
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        </ol>
-
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="./images/hotel.jpg">
-                            </div>
+              <h3 class="hotel">Hotel</h3>
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    </ol>
+                  <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active">
+                            <img src="./images/hotel.jpg">
                         </div>
-
-                        <!-- Left and right controls -->
-                        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-                          <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                          <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-                          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                          <span class="sr-only">Next</span>
-                        </a>
-                      </div>
+                    </div>
+                  <!-- Left and right controls -->
+                    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                      <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                      <span class="sr-only">Next</span>
+                    </a>
                   </div>
-              <h3 class="hotel"></h3>
-              <h4 class="phone"></h4>
-              <h4 class="web"></h4>
-              <h4 class="direccion"></h4>
-              <h4 class="descripcion"></h4>
+                  <h3 class="hotel"></h3>
+                  <h4 class="phone"></h4>
+                  <h4 class="web"></h4>
+                  <h4 class="direccion"></h4>
+                  <h4 class="descripcion"></h4>
+              </div>
             </div>
             <div id="nuevacoleccion">
                 <h3>Crear nueva colección</h3>
-                <form role="form">
-                  <div class="form-group">
-                    <label for="name">Nombre de la colección</label>
-                    <input type="name" class="form-control" id="name" placeholder="Introduce un nombre">
-                  </div>
-                  <button type="submit" class="btn btn-default">Submit</button>
+                <form id="form1" action="form_action.asp">
+                  <label for="id">Nombre de la colección: </label><br>
+                  <input type="name" name="form1" placeholder="Introduce un nombre"><br>
+                  <input type="submit" name="form1" value="Submit">
                 </form>
             </div>
             <div id="lateraldcho">
                 <h3>Mis colecciones</h3>
                 <p id="listacolecciones"></p>
+            </div>
+            <div id="alojados">
+                <div id="hotelcontainer2"></div>
+            </div>
+            <div id="addplus">
+                <h3>Añadir usuario google plus a este hotel</h3>
+                <form id="form2" action="form_action.asp">
+                  <label for="id">ID de usuario de google plus: </label><br>
+                  <input type="text" name="form2" placeholder="Ej.: 346576859493930"><br>
+                  <input type="submit" name="form2" value="Submit">
+                </form>
+                <h4>Lista de ids asociados a este hotel</h4>
+                <p id="listids"></p>
+                <p id="hotelactual"></p>
             </div>
         </div>
         <div id="pie_de_pagina">

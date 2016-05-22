@@ -5,8 +5,17 @@ $(function() {
 });
 
 var cargarInfoHotel = function (hotel){
-    console.log("Join1");
-
+    //Hacemos la lista de ids
+    $("#listids").empty();
+    idsplus[hotel.basicData.name].forEach(function(number){
+        console.log(idsplus[hotel.basicData.name]);
+        console.log(number);
+        $("#listids").prepend(
+          "<div id='"+number+"'>"+
+          "<h5>"+number+"</h5>"+
+          "</div>"
+        );
+    });
     //Eliminar antiguo
     $("#central .hotel").empty();
     $("#central .phone").empty();
@@ -45,15 +54,36 @@ var cargarInfoHotel = function (hotel){
     $(".carousel-inner").html(fotoscarrusel);
 }
 
-$(document).ready(function() {
-    $("#Inicio").click(function() {
+var idsplus = {};
+function addidplus(idnumber) {
+    nombrehotelactual = $("#hotelactual").html();
+    if (idsplus[nombrehotelactual].indexOf(idnumber) == -1){
+      idsplus[nombrehotelactual].push(idnumber);
+    }
+    //Hacemos la lista de ids
+    $("#listids").empty();
+    idsplus[nombrehotelactual].forEach(function(number){
+        console.log(idsplus[nombrehotelactual]);
+        console.log(number);
+        $("#listids").prepend(
+          "<div id='"+number+"'>"+
+          "<h5>"+number+"</h5>"+
+          "</div>"
+        );
+    });
+}
 
+$(document).ready(function() {
+
+    $("#Inicio").click(function() {
+        $("#addplus").css("display", "none");
     });
     $("#Gestion_de_colecciones").click(function() {
-
+        $("#addplus").css("display", "none");
     });
     $("#Gestion_de_alojados").click(function() {
-
+        $("#addplus").css("display", "block");
+        $("#hotelcontainer2").html($("#hotelcontainer").html());
     });
 
     //Pestaña de Inicio
@@ -68,6 +98,8 @@ $(document).ready(function() {
                   "<h5>"+val.basicData.name+"</h5>"+
                   "</div>"
                 );
+                idsplus[val.basicData.name] = [];
+
                 $("#"+key).draggable({
                     containment: "window",
                     scroll: false,
@@ -96,6 +128,7 @@ $(document).ready(function() {
                     .on("popupopen", onPopupOpen)
                     .openPopup();
                     function onClick(e) {
+                        $("#hotelactual").html(val.basicData.name);
                         cargarInfoHotel(val);
                         mymap.setView([val.geoData.latitude, val.geoData.longitude], 16);
                     }
@@ -114,6 +147,7 @@ $(document).ready(function() {
                             mymap.removeLayer(layer);
                         });
                     }
+                    $("#hotelactual").html(val.basicData.name);
                     cargarInfoHotel(val);
                 });
             });
@@ -143,13 +177,14 @@ $(document).ready(function() {
     }
 
     //Pestaña Gestion_de_colecciones
-    $("form").submit(function(event) {
-      var idname = $("input").val();
+    $("#form1").submit(function(event) {
+      var idname2 = $('input[name="form1"]').val();
+      idname = idname2+"a";
       console.log(idname);
       event.preventDefault();
       $("#listacolecciones").prepend(
         "<div id='"+idname+"'>"+
-        "<h4>"+idname+"</h5>"+
+        "<h4>"+idname2+"</h4>"+
         "</div>"
       );
       $("#"+idname).droppable({
@@ -157,6 +192,7 @@ $(document).ready(function() {
       });
       function handleDropEvent( event, ui ) {
         var draggable = ui.draggable;
+        console.log(idname);
         $("#"+idname).append(draggable);
       };
       $("#"+idname+" h4").css("text-decoration","underline");
@@ -164,9 +200,13 @@ $(document).ready(function() {
       $("#"+idname).css("background","Beige");
       $("#"+idname).css("width","80%");
       $("#"+idname).css("text-align","center");
-
-      $("#"+idname).click(function() {
-          console.log("algo");
-      });
     });
+
+    //Pestaña Gestion_de_alojados
+    $("#form2").submit(function(event) {
+        var idnumber = $('input[name="form2"]').val();
+        event.preventDefault();
+        addidplus(idnumber);
+    });
+
 });
